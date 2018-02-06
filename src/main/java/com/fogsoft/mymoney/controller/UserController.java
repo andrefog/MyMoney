@@ -48,7 +48,6 @@ public class UserController {
 	public String addUser(@ModelAttribute @Valid User user, BindingResult result, RedirectAttributes atts, Model model,
 			Locale locale) {
 		if (result.hasErrors()) {
-
 			System.out.println(user.getBirthday());
 
 			model.addAttribute("user", user);

@@ -42,4 +42,14 @@ public class LoginController {
 		model.addAttribute("message", new MessageBean(MessageType.ERRO, msg));
 		return "/login";
 	}
+	
+	@RequestMapping(value="logoff")
+	public String doLogoff(Model model, Locale locale) {
+		loginService.logout();
+
+		String msg = messageSource.getMessage("msg.user.logoff", null, locale); 
+		model.addAttribute("message", new MessageBean(MessageType.SUCESS, msg));
+
+		return "redirect:/login";
+	}
 }

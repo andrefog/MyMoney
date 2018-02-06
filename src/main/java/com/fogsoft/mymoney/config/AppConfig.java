@@ -1,6 +1,8 @@
 package com.fogsoft.mymoney.config;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -57,7 +59,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public OpenEntityManagerInViewInterceptor getOpenEntityManagerInViewInterceptor() {
 		return new OpenEntityManagerInViewInterceptor();
 	}
-
+	
 	@Bean
 	public AuthenticationInterceptor getAuthenticationInterceptor() {
 	    return new AuthenticationInterceptor();
