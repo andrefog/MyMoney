@@ -7,33 +7,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title><spring:message code="app.title"/></title>
-	<link rel="shortcut icon" type="image/svg" href="${pageContext.request.contextPath}/resources/icons/favicon.svg">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-reboot.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/popper-1.12.9.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" type="image/svg" href="<c:url value="/resources/icons/favicon.svg"/>"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap-reboot.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<meta charset="UTF-8"/>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="${pageContext.request.contextPath}/home"><spring:message code="app.title"/></a>
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/"><spring:message code="app.title"/></a>
 		<!-- <input class="form-control form-control-dark w-100" placeholder="Search" aria-label="Search" type="text"> -->
-		<div class="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="userMenuDropdown" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-						${loggedUser.user.firstName}&nbsp;${loggedUser.user.lastName}<img src="<c:url value="/resources/icons/user.svg"/>"/>
-					</a>
-					<div class="dropdown-menu" aria-labelledby="userMenuDropdown">
-						<a class="dropdown-item" href="#"><spring:message code="change.password"/></a>
-						<a class="dropdown-item" href="${pageContext.request.contextPath}/logoff"><img src="<c:url value="/resources/icons/logoff.svg"/>"/><spring:message code="app.logoff"/></a>
-					</div>
-				</li>
-			</ul>
-		</div>
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<a class="nav-link" href="#"><img src="<c:url value="/resources/icons/logoff.svg"/>"/><spring:message code="app.logoff"/></a>
+			</li>
+		</ul>
 	</nav>
     
     <div class="container-fluid">
